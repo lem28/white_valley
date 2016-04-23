@@ -1,0 +1,43 @@
+<div class="form-group">
+	<label for="usr">Name:</label>
+	<input type="text" class="form-control" id="usr">
+</div>
+<div class="form-group">
+	<label for="pwd">Password:</label>
+	<input type="password" class="form-control" id="pwd">
+</div>
+<div name="upload">
+	<form action="rpc.php" method="post" enctype="multipart/form-data"> 
+		<p>Upload File: <input type="file" name="file_up"/>
+		<div style="text-align: left;">
+			<input type="submit" name="request" value="upload"/>
+		</div>
+	</form>
+</div>
+<div name="search">
+	<form action="rpc.php" method="post"> 
+		<p>Search: <input type="text" name="param" />
+		<div style="text-align: left;"> 
+			<input type="submit" name="request" value="search" /> 
+		</div>				
+	</form>
+</div>
+<div name="browse">
+	<form action="rpc.php" method="post"> 
+		<div style="text-align: left;"> 
+			<input type="submit" name="request" value="browse" /> 
+		</div>
+	</form>
+</div>
+<div name="register">
+	<form action="rpc.php" method="post">
+		<p>Username: <input type="text" name="username"/>
+		<p>Password: <input type ="password" name="password"/>
+		<p>First Name: <input type ="text" name="first_name"/>
+		<p>Last Name: <input type ="text" name="last_name"/>
+		<p>E-mail: <input type ="text" name="user_email"/>
+		<div style="text-align: left;">
+			<input type="submit" name="request" value="register"/>
+		</div>
+	</form>
+</div>
