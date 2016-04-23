@@ -40,27 +40,43 @@
 		</div>
 	</div>
 	<div class="container-fluid">
-		<div class="jumbotron">
-			<div name="register">
-				<form action="rpc.php" method="post">
-					<p>Username: <input type="text" name="username"/>
-					<p>Password: <input type ="password" name="password"/>
-					<p>First Name: <input type ="text" name="first_name"/>
-					<p>Last Name: <input type ="text" name="last_name"/>
-					<p>E-mail: <input type ="text" name="user_email"/>
-					<div style="text-align: left;">
-						<input type="submit" name="request" value="register"/>
-					</div>
-				</form>
-			</div>
-			<div name="login">
-				<div class="form-group">
-					<label for="usr">Name:</label>
-					<input type="text" class="form-control" id="usr">
+		<div class="jumbotron" id="credentials">
+			<div class="row">
+				<div class="col-sm-6 col-md-6" name="register">
+					<form action="php/common.php" method="post">
+						<p>Username: <input type="text" name="reg_username"/>
+						<p>Password: <input type ="password" name="reg_password"/>
+						<p>First Name: <input type ="text" name="first_name"/>
+						<p>Last Name: <input type ="text" name="last_name"/>
+						<p>E-mail: <input type ="text" name="user_email"/>
+						<button onclick="register()">Register</button>
+					</form>
 				</div>
-				<div class="form-group">
-					<label for="pwd">Password:</label>
-					<input type="password" class="form-control" id="pwd">
+				<div class="col-sm-6 col-md-6" name="login">
+					<form action="php/common.php" method="post">
+						<p style="text-align: right">Username: <input type="text" name="log_username"/>
+						<p style="text-align: right">Password: <input type ="password" name="log_password"/>
+						<button onclick="login()">Login</button>
+					</form>
+				</div>
+			</div>
+		</div>
+		<div class="jumbotron" id="actions">
+			<div class="row">
+				<div class="col-sm-4 col-md-4" name="upload">
+					<form action="php/common.php" method="post"> 
+						<p>Upload File: <input type="file" name="file_up"/>
+						<button onclick="upload()">Upload</button>
+					</form>
+				</div>
+				<div class="col-sm-4 col-md-4" name="browse">
+						<button onclick="browse()">Browse</button>
+				</div>
+				<div class="col-sm-4 col-md-4" name="search">
+					<form action="php/common.php" method="post"> 
+						<p style="text-align: right;">Search: <input type="text" name="param" />
+						<button onclick="search()">Search</button>
+					</form>
 				</div>
 			</div>
 		</div>
