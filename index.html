@@ -4,14 +4,13 @@
 		<!-- Metadata -->
 		<meta charset="utf-8" content="text/html" http-equiv="Content-Type">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
-		<link href="data:image/ico;base64, AAABAAEAEBAAAAEAIABoBAAAFgAAACgAAAAQAAAAIAAAAAEAIAAAAAAAAAQAAAAAAAAAAAAAAAAAAAAAAABbNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9zSxL/hmcx/4J5XP9wWjj/WzcO/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1w3DP+gcR3/3qYs/9XKhf/I69//y/Xw/7zc0v+Del7/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2DP9iPQz/26Qs/9+nLf/VpTr/v8ur/8v18P/L9fD/yvTv/4yJcP9bNg3/WzYN/1s2Df9bNg3/YUAZ/2dLJv9bNg3/XjkM/6h3H//dpSv/watf/7vCmP/L9fD/y/Xw/8v18P++39b/XzkN/1s2Df9bNg3/b1w8/8Hk3P+yyr3/WzYN/1s2Df9cNw3/yJMn/8+ZKP/J0KT/09Wh/8vz6//L9fD/usqv/3NJEP9bNg3/WzYN/2hTM/+72Mz/kIxw/1s2Df9bNg3/WzYN/7yJJP/epiz/2MFw/9jAbP/csEP/27NN/5xuHv+fjFP/Zj4N/1s2Df9bNg3/c1cs/5dvKP9bNg3/YjwO/4pfGP/MrFb/1c2N/9K+cP/Ili3/3KUs/5BjGv9eOA3/bEIN/185Df9bNg3/WzYN/1s2Df90TBH/dk0T/4FWFv+YkW3/g3tf/3ZdUv+Zk6H/0dCZ/4tfGP9bNg3/Y0Qe/5+ql/92ZET/XDsU/1s2Df9bNg3/WzYM/1s2Df9wWzn/blc1/1w3D/9gNCL/ajkx/4uDY/+dcSH/WzYN/5SXgP/F6+T/rcK0/2NRMv9bNg3/WzYN/1s2Df9bNg3/fnJU/6adc//ApV7/o4pN/3NCRv9xSzz/inFA/4NYFv98UhX/qJ9y/21UMP9bNg7/WzYN/1s2Df9bNg3/WzYN/3dnR/95XTz/kXlX/4VbF/+Fckr/eD1Q/3ReRf9lPw7/Z0AQ/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/UzIM/1czDP9YNAz/aU8r/2QzMf9bNRH/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzUR/18zIf9gMif/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNQ//WzUR/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/WzYN/1s2Df9bNg3/AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==" rel="shortcut icon" type="image/x-icon">
 		<!-- CSS -->
 		<link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
-		<link rel="stylesheet" href="css/index.css">
+		<link rel="stylesheet" href="css/style.css">
 		<!-- JS -->
 		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.0/jquery.min.js"></script>
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-		<script src="js/index.js"></script>
+		<script src="js/script.js"></script>
 	</head>
 	<body onload="date(); startTime()">
 	<nav class="navbar navbar-default">
@@ -43,20 +42,20 @@
 		<div class="jumbotron" id="credentials">
 			<div class="row">
 				<div class="col-sm-6 col-md-6" name="register">
-					<form action="php/common.php" method="post">
+					<form action="php/handler.php" method="post">
 						<p>Username: <input type="text" name="reg_username"/>
 						<p>Password: <input type ="password" name="reg_password"/>
 						<p>First Name: <input type ="text" name="first_name"/>
 						<p>Last Name: <input type ="text" name="last_name"/>
 						<p>E-mail: <input type ="text" name="user_email"/>
-						<button onclick="register()">Register</button>
+						<p><button onclick="register()">Register</button>
 					</form>
 				</div>
-				<div class="col-sm-6 col-md-6" name="login">
-					<form action="php/common.php" method="post">
-						<p style="text-align: right">Username: <input type="text" name="log_username"/>
-						<p style="text-align: right">Password: <input type ="password" name="log_password"/>
-						<button onclick="login()">Login</button>
+				<div class="col-sm-6 col-md-6" style="text-align: right" name="login">
+					<form action="php/handler.php" method="post">
+						<p>Username: <input type="text" name="log_username"/>
+						<p>Password: <input type ="password" name="log_password"/>
+						<p><button onclick="login()">Login</button>
 					</form>
 				</div>
 			</div>
@@ -64,18 +63,18 @@
 		<div class="jumbotron" id="actions">
 			<div class="row">
 				<div class="col-sm-4 col-md-4" name="upload">
-					<form action="php/common.php" method="post"> 
+					<form action="php/handler.php" method="post"> 
 						<p>Upload File: <input type="file" name="file_up"/>
-						<button onclick="upload()">Upload</button>
+						<p><button onclick="upload()">Upload</button>
 					</form>
 				</div>
-				<div class="col-sm-4 col-md-4" name="browse">
-						<button onclick="browse()">Browse</button>
+				<div class="col-sm-4 col-md-4" style="text-align: center;" name="browse">
+						<p><button onclick="browse()">Browse</button>
 				</div>
-				<div class="col-sm-4 col-md-4" name="search">
-					<form action="php/common.php" method="post"> 
-						<p style="text-align: right;">Search: <input type="text" name="param" />
-						<button onclick="search()">Search</button>
+				<div class="col-sm-4 col-md-4" style="text-align: right;" name="search">
+					<form action="php/handler.php" method="post"> 
+						<p>Search: <input type="text" name="param" />
+						<p><button onclick="search()">Search</button>
 					</form>
 				</div>
 			</div>

@@ -8,26 +8,26 @@ $response = "didn't work :^)";
 switch($request)
 {
 	case "register":
-		$username = $_POST['username'];
-		$password = $_POST['password'];
-		$first_name = $_POST['first_name'];
-		$last_name = $_POST['last_name'];
-		$email = $_POST['user_email'];
+		$username = $_POST['reg_username'];
+		$password = $_POST['reg_password'];
+		$first_name = $_POST['reg_first_name'];
+		$last_name = $_POST['reg_last_name'];
+		$email = $_POST['reg_email'];
 		$login = new user("inc/connect.ini");
 		$response = $login->login_user($username, $password);
-		if ($response['success'])
+		if (!$response['success'])
 		{
-			$response = "<p>Registration Failed: ".$response['message'];			
+			$response = "<p>Registration Failed: ".$response['message'];
 		}
-		else		
+		else
 		{
 			$login->add_new_user($username,$password,$first_name,$last_name,$email);
 			$response = "<p> $username Registered Successfully!";
 		}
 		break;
 	case "login":
-		$username = $_POST['username'];
-		$password = $_POST['password'];
+		$username = $_POST['log_username'];
+		$password = $_POST['log_password'];
 		$login = new user("inc/connect.ini");
 		$response = $login->login_user($username, $password);
 		if ($response['success'])

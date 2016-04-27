@@ -36,14 +36,33 @@ function checkTime(i)
 	return i;
 }
 // AJAX solution
-var xhttp = new XMLHttpRequest();
-function ajaxHandler()
+var reg_text = {
+	"reg_username":document.getElementById("reg_username") ,
+	"reg_password":document.getElementById("reg_password") ,
+	"reg_firstName":document.getElementById("reg_firstName") ,
+	"reg_lastName":document.getElementById("reg_lastName") ,
+	"reg_email":document.getElementById("reg_email")
+};
+
+var log_text = {
+	"log_username":document.getElementById("log_username") ,
+	"log_password":document.getElementById("log_password")
+};
+
+function AJAX_Handler(cmd, str)
 {
-	xhttp.onreadystatechange = function() {
-		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			document.getElementById("demo").innerHTML = xhttp.responseText;
-		}
-	};
-	xhttp.open("POST", "ajax_info.txt", true);
+	var xhttp = new XMLHttpRequest();
+	var obj = JSON.parse(str);
+	xhttp.open("POST", "../php/handler.php?" + cmd + " " + obj, true);
 	xhttp.send();
+}
+
+function register()
+{
+	AJAX_Handler(register, reg_text);
+}
+
+function login()
+{
+	AJAX_Handler(login, log_text);
 }
