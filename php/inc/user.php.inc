@@ -14,7 +14,7 @@ class user
 			$ini['db']["user"],
 			$ini['db']["password"],
 			$ini['db']["db"]);
-		$this->salt   = $ini['db']["salt"];
+		$this->salt = $ini['db']["salt"];
 		if ($this->db->connect_errno > 0)
 		{
 			$this->logger->log("failed to connect to database re: ".$this->db->connect_error);
@@ -32,12 +32,12 @@ class user
 	}
 	public function get_user_login($user_login)
 	{
-		$query   = "select user_login from users where user_login='$user_login';";
+		$query = "select user_login from users where user_login='$user_login';";
 		$result = $this->db->query($query);
-	        $user = $result->fetch_assoc();
+		$user = $result->fetch_assoc();
 		if (isset($user['user_login']))
 		{
-		    return $user['user_login'];
+			return $user['user_login'];
 		}
 		return 0;
 	}
@@ -50,7 +50,7 @@ class user
 				"message" => "user does not exist"
 			);
 		}
-		$query   = "select * from users where user_login = '$user_login';";
+		$query = "select * from users where user_login = '$user_login';";
 		$result = $this->db->query($query);
 		if (!$result)
 		{
@@ -105,7 +105,7 @@ class user
 				'$now',
 				'$now'
 			);";
-		$result   = $this->db->query($query);
+		$result = $this->db->query($query);
 		if (!$result)
 		{
 			$this->logger->log("error: ".$this->db->error);
