@@ -14,50 +14,70 @@
 	</head>
 	<body onload="date(); startTime()">
 	<nav class="navbar navbar-default">
-		<div class="container">
+		<div class="container-fluid">
 			<div class="navbar-header">
-				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>
-					<span class="icon-bar"></span>                        
-				</button>
 				<a class="navbar-brand" href="index.html">white valley file hosting</a>
 			</div>
-			<div class="collapse navbar-collapse" id="myNavbar">
-				<ul class="nav navbar-nav navbar-right">
-					<li><a href="#">WHO</a></li>
-					<li><a href="#">WHAT</a></li>
-					<li><a href="#">WHERE</a></li>
-				</ul>
+			<div class="nav navbar-nav navbar-left">
+				<div class="navbar-brand" id="date" style="text-align: center"></div>
+				<div class="navbar-brand" id="time" style="text-align: center"></div>
 			</div>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Register <span class="glyphicon glyphicon-log-in"></span></a>
+					<div class="dropdown-menu">
+						<form id="formLogin" class="form container-fluid">
+							<div class="form-group">
+								<label for="reg_usr">Name:</label>
+								<input type="text" class="form-control" id="reg_usr">
+							</div>
+							<div class="form-group">
+								<label for="reg_pwd">Password:</label>
+								<input type="password" class="form-control" id="reg_pwd">
+							</div>
+							<div class="form-group">
+								<label for="first_name">First Name:</label>
+								<input type="text" class="form-control" id="first_name">
+							</div>
+							<div class="form-group">
+								<label for="last_name">Last Name:</label>
+								<input type="text" class="form-control" id="last_name">
+							</div>
+							<div class="form-group">
+								<label for="email">E-mail:</label>
+								<input type="text" class="form-control" id="email">
+							</div>
+							<button type="button" id="btnRegister" class="btn btn-block">Register</button>
+						</form>
+					</div>
+				</li>
+			</ul>
+			<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span class="glyphicon glyphicon-log-in"></span></a>
+					<div class="dropdown-menu">
+						<form id="formLogin" class="form container-fluid">
+							<div class="form-group">
+								<label for="usr">Name:</label>
+								<input type="text" class="form-control" id="usr">
+							</div>
+							<div class="form-group">
+								<label for="pwd">Password:</label>
+								<input type="password" class="form-control" id="pwd">
+							</div>
+							<button type="button" id="btnLogin" class="btn btn-block">Login</button>
+						</form>
+						<div class="container-fluid">
+							<br>
+							<a class="small" href="#">Forgot password?</a>
+						</div> 	
+					</div>
+				</li>
+			</ul>
 		</div>
 	</nav>
 	<div class="container-fluid">
-		<div class="panel">
-			<div id="date" style="text-align: center"></div>
-			<div id="time" style="text-align: center"></div>
-		</div>
-	</div>
-	<div class="container-fluid">
 		<div class="jumbotron" id="credentials">
 			<div class="row">
-				<div class="col-sm-6 col-md-6" name="register">
-					<form action="php/handler.php" method="post">
-						<p>Username: <input type="text" name="reg_username"/>
-						<p>Password: <input type ="password" name="reg_password"/>
-						<p>First Name: <input type ="text" name="first_name"/>
-						<p>Last Name: <input type ="text" name="last_name"/>
-						<p>E-mail: <input type ="text" name="user_email"/>
-						<p><button onclick="register()">Register</button>
-					</form>
-				</div>
-				<div class="col-sm-6 col-md-6" style="text-align: right" name="login">
-					<form action="php/handler.php" method="post">
-						<p>Username: <input type="text" name="log_username"/>
-						<p>Password: <input type ="password" name="log_password"/>
-						<p><button onclick="login()">Login</button>
-					</form>
-				</div>
+				<h2 style="text-align: center">Welcome to White Valley File Hosting
 			</div>
 		</div>
 		<div class="jumbotron" id="actions">
