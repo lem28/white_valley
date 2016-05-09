@@ -33,12 +33,21 @@ switch($request)
 		if ($response['success'])
 		{
 			$response = "<p>Login Successful!";
-			echo '<a href="login.html">Click here to upload your file(s)<a>';
+			$_SESSION["user"] = $username;
+			header( 'refresh:3; Location: http://127.0.0.1/user.html' ) ;
 		}
-		else		
+		else
 		{
 			$response = "<p>Login Failed: ".$response['message'];
 		}
+		break;
+	case "logout":
+		// remove all session variables
+		session_unset();
+		// destroy the session
+		session_destroy();
+		
+		header( 'refresh:3; Location: http://127.0.0.1/index.html' ) ;
 		break;
 	case "upload":
 		$file = new file("inc/connect.ini");
@@ -50,19 +59,6 @@ switch($request)
 		else
 		{
 			$response = "<p>File Upload Failed...";
-		}
-		break;
-	case "search":
-		$param = $_POST['param'];
-		$file = new file("inc/connect.ini");
-		$response = $file->file_search($param);
-		if ($response['success'])
-		{
-			$response = "<p>File Search Successful!";
-		}
-		else
-		{
-			$response = "<p>File Search Failed...";
 		}
 		break;
 	case "browse":

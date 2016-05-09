@@ -11,7 +11,7 @@ function date()
 	var month = date.getMonth() + 1;
 	var yy = date.getYear();
 	var year = (yy < 1000) ? yy + 1900 : yy;
-	document.getElementById('date').innerHTML = months[month] + " " + day + ", " + year + " ||";
+	document.getElementById('date').innerHTML = months[month] + " " + day + ", " + year;
 }
 function startTime()
 {
@@ -50,25 +50,50 @@ var log_text = {
 	"log_password":document.getElementById("log_pwd")
 };
 
-function AJAX_Handler(cmd, str)
+function login()
 {
+	if (log.length == 0) {
+		document.getElementById("status").innerHTML = "";
+        return;
+	}
 	var xhttp = new XMLHttpRequest();
-	var obj = JSON.parse(str);
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
-			document.getElementById("demo").innerHTML = xhttp.responseText;
+			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?" + cmd + " " + obj, true);
-	xhttp.send();
+	xhttp.open("POST", "../php/handler.php?request=login", true);
+	xhttp.send(JSON.stringify(log_text);
 }
 
 function register()
 {
-	AJAX_Handler(register, reg_text);
+	if (reg.length == 0) {
+		document.getElementById("status").innerHTML = "";
+        return;
+	}
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+			document.getElementById("status").innerHTML = xhttp.responseText;
+		}
+	};
+	xhttp.open("POST", "../php/handler.php?request=login", true);
+	xhttp.send(JSON.stringify(reg_text);
 }
 
-function login()
+function logout()
 {
-	AJAX_Handler(login, log_text);
+	if (reg.length == 0) {
+		document.getElementById("status").innerHTML = "";
+        return;
+	}
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+			document.getElementById("status").innerHTML = xhttp.responseText;
+		}
+	};
+	xhttp.open("POST", "../php/handler.php?request=logout", true);
+	xhttp.send();
 }

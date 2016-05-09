@@ -63,7 +63,7 @@ class user
 		$user = $result->fetch_assoc();
 		if (isset($user['user_pw']) && $user['user_pw'] == $salt_pw)
 		{
-				return array("success" => true);
+			return array("success" => true);
 		}
 		return array(
 			"success" => false,

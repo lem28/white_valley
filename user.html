@@ -54,7 +54,7 @@
 					</li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span class="glyphicon glyphicon-log-in"></span></a>
+					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span class="glyphicon glyphicon-log-out"></span></a>
 						<div class="dropdown-menu">
 							<form id="formLogin" class="form container-fluid">
 								<div class="form-group">
@@ -67,10 +67,6 @@
 								</div>
 								<button type="button" id="btnLogin" class="btn btn-block" onclick="login()">Login</button>
 							</form>
-							<div class="container-fluid">
-								<br>
-								<a class="small" href="#">Forgot password?</a>
-							</div> 	
 						</div>
 					</li>
 				</ul>
@@ -82,7 +78,30 @@
 					<h2 style="text-align: center">Welcome to White Valley File Hosting
 				</div>
 			</div>
-			<div class="jumbotron" id="status"></div>
+			<div class="jumbotron" id="actions">
+				<div class="row">
+					<div class="col-sm-4 col-md-4" name="upload">
+						<div class="form-group">
+							<label for="file">File:</label>
+							<input type="file" class="form-control" id="file">
+							<input type="button" class="form-control" id="file_btn" value="Upload" onclick="upload()">
+						</div>
+					</div>
+					<div class="col-sm-4 col-md-4" style="text-align: center;" name="browse">
+						<div class="form-group">
+							<label for="browse">Browse:</label>
+							<input type="button" class="form-control" id="browse" value="Click me!" onclick="browse()">
+						</div>
+					</div>
+					<div class="col-sm-4 col-md-4" style="text-align: right;" name="search">
+						<div class="form-group">
+							<label for="search">Search:</label>
+							<input type="search" class="form-control" id="search">
+							<input type="button" class="form-control" id="search_btn" value="Search" onclick="search()">
+						</div>
+					</div>
+				</div>
+			</div>
 		</div>
 	</body>
 </html>
