@@ -3,7 +3,7 @@ require_once("inc/user.php.inc");
 require_once("inc/file.php.inc");
 
 $request = $_POST['request'];
-$response = "didn't work :^)";
+$response = "<h1>didn't work :^)";
 
 switch($request)
 {
@@ -15,7 +15,7 @@ switch($request)
 		$email = $_POST['reg_email'];
 		$login = new user("inc/connect.ini");
 		$response = $login->login_user($username, $password);
-		if ($response['success'])
+		if (!$response['success'])
 		{
 			$login->add_new_user($username,$password,$first_name,$last_name,$email);
 			$response = "<p> $username Registered Successfully!";

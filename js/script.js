@@ -85,3 +85,27 @@ function logout()
 	xhttp.open("POST", "../php/handler.php?logout", true);
 	xhttp.send();
 }
+
+function upload()
+{
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+			document.getElementById("status").innerHTML = xhttp.responseText;
+		}
+	};
+	xhttp.open("POST", "../php/handler.php?upload", true);
+	xhttp.send();
+}
+
+function browse()
+{
+	var xhttp = new XMLHttpRequest();
+	xhttp.onreadystatechange = function() {
+		if (xhttp.readyState == 4 && xhttp.status == 200) {
+			document.getElementById("status").innerHTML = xhttp.responseText;
+		}
+	};
+	xhttp.open("POST", "../php/handler.php?browse", true);
+	xhttp.send();
+}
