@@ -53,7 +53,7 @@ var log_text = {
 function login()
 {
 	if (log.length == 0) {
-		document.getElementById("status").innerHTML = "";
+		document.getElementById("status").innerHTML = "Login to use our services!";
         return;
 	}
 	var xhttp = new XMLHttpRequest();
@@ -78,7 +78,7 @@ function register()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?request=login", true);
+	xhttp.open("POST", "../php/handler.php?request=register", true);
 	xhttp.send(JSON.stringify(reg_text);
 }
 
