@@ -63,7 +63,7 @@ function login()
 		}
 	};
 	xhttp.open("POST", "../php/handler.php?request=login", true);
-	xhttp.send(JSON.stringify(log_text);
+	xhttp.send(JSON.stringify(log_text));
 }
 
 function register()
@@ -79,7 +79,7 @@ function register()
 		}
 	};
 	xhttp.open("POST", "../php/handler.php?request=register", true);
-	xhttp.send(JSON.stringify(reg_text);
+	xhttp.send(JSON.stringify(reg_text));
 }
 
 function logout()
