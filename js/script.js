@@ -58,7 +58,7 @@ function login()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?request=login", true);
+	xhttp.open("POST", "../php/handler.php?login", true);
 	xhttp.send(JSON.stringify(log_text));
 }
 
@@ -70,22 +70,18 @@ function register()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?request=register", true);
+	xhttp.open("POST", "../php/handler.php?register", true);
 	xhttp.send(JSON.stringify(reg_text));
 }
 
 function logout()
 {
-	if (reg.length == 0) {
-		document.getElementById("status").innerHTML = "";
-        return;
-	}
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?request=logout", true);
+	xhttp.open("POST", "../php/handler.php?logout", true);
 	xhttp.send();
 }
