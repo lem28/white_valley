@@ -52,10 +52,6 @@ var log_text = {
 
 function login()
 {
-	if (log.length == 0) {
-		document.getElementById("status").innerHTML = "Login to use our services!";
-        return;
-	}
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
@@ -68,10 +64,6 @@ function login()
 
 function register()
 {
-	if (reg.length == 0) {
-		document.getElementById("status").innerHTML = "";
-        return;
-	}
 	var xhttp = new XMLHttpRequest();
 	xhttp.onreadystatechange = function() {
 		if (xhttp.readyState == 4 && xhttp.status == 200) {
