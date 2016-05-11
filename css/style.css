@@ -3,5 +3,6 @@ body {
 }
 .jumbotron {
 	background-color: #99ccff;
+	border: solid 1px #000000;
 	color:#ffffff;
 }
