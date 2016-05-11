@@ -8,7 +8,7 @@ class user
 	public function __construct($iniFile)
 	{
 		$ini		  = parse_ini_file($iniFile, true);
-		$this->logger = new error_logger("logs/users.log");
+		$this->logger = new error_logger("../../logs/users.log");
 		$this->db	  = new mysqli(
 			$ini['db']["host"],
 			$ini['db']["user"],

@@ -7,7 +7,7 @@ class file
 	public function __construct($ini_file)
 	{
 		$ini	  = parse_ini_file($ini_file, true);
-		$logger   = new error_logger("logs/files.log");
+		$logger   = new error_logger("../../logs/files.log");
 		$this->db = new mysqli(
 			$ini['db']['host'],
 			$ini['db']['user'],
