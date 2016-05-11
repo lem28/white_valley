@@ -2,7 +2,7 @@
 require_once("inc/user.php.inc");
 require_once("inc/file.php.inc");
 
-$request = $_POST[request];
+$request = $_REQUEST["case"];
 $response = "<h1>didn't work :^)";
 
 switch($request)

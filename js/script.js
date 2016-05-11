@@ -66,7 +66,7 @@ function login()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?request=login", true);
+	xhttp.open("POST", "../php/handler.php?case=login", true);
 	xhttp.send(log_text);
 }
 
@@ -78,7 +78,7 @@ function register()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?request=register", true);
+	xhttp.open("POST", "../php/handler.php?case=register", true);
 	xhttp.send(reg_text);
 }
 
@@ -90,7 +90,7 @@ function logout()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?logout", true);
+	xhttp.open("POST", "../php/handler.php?case=logout", true);
 	xhttp.send();
 }
 
@@ -102,7 +102,7 @@ function upload()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?request=upload", true);
+	xhttp.open("POST", "../php/handler.php?case=upload", true);
 	xhttp.send();
 }
 
@@ -114,6 +114,6 @@ function browse()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?request=browse", true);
+	xhttp.open("POST", "../php/handler.php?case=browse", true);
 	xhttp.send();
 }
