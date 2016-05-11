@@ -2,7 +2,7 @@
 require_once("inc/user.php.inc");
 require_once("inc/file.php.inc");
 
-$request = $_POST[''];
+$request = $_POST[request];
 $response = "<h1>didn't work :^)";
 
 switch($request)

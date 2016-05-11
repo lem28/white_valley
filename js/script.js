@@ -5,7 +5,9 @@ function makeArray()
 }
 function date()
 {
-	var months = new makeArray('january', 'february', 'march', 'april', 'may', 'june', 'july', 'august', 'september', 'october', 'november', 'december');
+	var months = new makeArray('january', 'february', 'march', 'april',
+	'may', 'june', 'july', 'august',
+	'september', 'october', 'november', 'december');
 	var date = new Date();
 	var day = date.getDate();
 	var month = date.getMonth() + 1;
