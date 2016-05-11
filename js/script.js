@@ -35,9 +35,14 @@ function checkTime(i)
 	};
 	return i;
 }
-// Dropdown options
+function init()
+{
+	date();
+	startTime();
+}
 // AJAX solution
-var reg_text = {
+var reg_text =
+{
 	"reg_username":document.getElementById("reg_usr") ,
 	"reg_password":document.getElementById("reg_pwd") ,
 	"reg_firstName":document.getElementById("first_name") ,
@@ -45,7 +50,8 @@ var reg_text = {
 	"reg_email":document.getElementById("email")
 };
 
-var log_text = {
+var log_text =
+{
 	"log_username":document.getElementById("log_usr") ,
 	"log_password":document.getElementById("log_pwd")
 };
@@ -58,8 +64,8 @@ function login()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?login", true);
-	xhttp.send(JSON.stringify(log_text));
+	xhttp.open("POST", "../php/handler.php?request=login", true);
+	xhttp.send(log_text);
 }
 
 function register()
@@ -70,8 +76,8 @@ function register()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?register", true);
-	xhttp.send(JSON.stringify(reg_text));
+	xhttp.open("POST", "../php/handler.php?request=register", true);
+	xhttp.send(reg_text);
 }
 
 function logout()
@@ -94,7 +100,7 @@ function upload()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?upload", true);
+	xhttp.open("POST", "../php/handler.php?request=upload", true);
 	xhttp.send();
 }
 
@@ -106,6 +112,6 @@ function browse()
 			document.getElementById("status").innerHTML = xhttp.responseText;
 		}
 	};
-	xhttp.open("POST", "../php/handler.php?browse", true);
+	xhttp.open("POST", "../php/handler.php?request=browse", true);
 	xhttp.send();
 }

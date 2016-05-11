@@ -12,7 +12,7 @@
 		<script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
 		<script src="js/script.js"></script>
 	</head>
-	<body onload="date(); startTime()">
+	<body onload="init()">
 		<div class="container-fluid">
 			<nav class="navbar navbar-default">
 				<div class="navbar-header">
@@ -24,84 +24,30 @@
 				<div class="nav navbar-nav navbar-left">
 					<div class="navbar-brand" id="time"></div>
 				</div>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Register <span class="glyphicon glyphicon-log-in"></span></a>
-						<div class="dropdown-menu">
-							<form id="formLogin" class="form container-fluid">
-								<div class="form-group">
-									<label for="reg_usr">Name:</label>
-									<input type="text" class="form-control" id="reg_usr">
-								</div>
-								<div class="form-group">
-									<label for="reg_pwd">Password:</label>
-									<input type="password" class="form-control" id="reg_pwd">
-								</div>
-								<div class="form-group">
-									<label for="first_name">First Name:</label>
-									<input type="text" class="form-control" id="first_name">
-								</div>
-								<div class="form-group">
-									<label for="last_name">Last Name:</label>
-									<input type="text" class="form-control" id="last_name">
-								</div>
-								<div class="form-group">
-									<label for="email">E-mail:</label>
-									<input type="text" class="form-control" id="email">
-								</div>
-								<button type="button" id="btnRegister" class="btn btn-block" onclick="register">Register</button>
-							</form>
-						</div>
-					</li>
-				</ul>
-				<ul class="nav navbar-nav navbar-right">
-					<li class="dropdown"><a class="dropdown-toggle" data-toggle="dropdown" href="#">Login <span class="glyphicon glyphicon-log-out"></span></a>
-						<div class="dropdown-menu">
-							<form id="formLogin" class="form container-fluid">
-								<div class="form-group">
-									<label for="usr">Name:</label>
-									<input type="text" class="form-control" id="usr">
-								</div>
-								<div class="form-group">
-									<label for="pwd">Password:</label>
-									<input type="password" class="form-control" id="pwd">
-								</div>
-								<button type="button" id="btnLogin" class="btn btn-block" onclick="login()">Login</button>
-							</form>
-						</div>
-					</li>
-				</ul>
+				<div class="nav navbar-nav navbar-right">
+					<a class="navbar-brand" href="#" onclick="logout();return false;">Logout <span class="glyphicon glyphicon-log-out"></span></a>
+				</div>
 			</nav>
 		</div>
 		<div class="container-fluid">
-			<div class="jumbotron" id="credentials">
-				<div class="row">
-					<h2 style="text-align: center">Welcome to White Valley File Hosting
-				</div>
-			</div>
 			<div class="jumbotron" id="actions">
 				<div class="row">
-					<div class="col-sm-4 col-md-4" name="upload">
+					<div class="col-sm-6 col-md-6" name="upload">
 						<div class="form-group">
 							<label for="file">File:</label>
 							<input type="file" class="form-control" id="file">
 							<input type="button" class="form-control" id="file_btn" value="Upload" onclick="upload()">
 						</div>
 					</div>
-					<div class="col-sm-4 col-md-4" style="text-align: center;" name="browse">
+					<div class="col-sm-6 col-md-6" style="text-align: right;" name="browse">
 						<div class="form-group">
 							<label for="browse">Browse:</label>
 							<input type="button" class="form-control" id="browse" value="Click me!" onclick="browse()">
 						</div>
 					</div>
-					<div class="col-sm-4 col-md-4" style="text-align: right;" name="search">
-						<div class="form-group">
-							<label for="search">Search:</label>
-							<input type="search" class="form-control" id="search">
-							<input type="button" class="form-control" id="search_btn" value="Search" onclick="search()">
-						</div>
-					</div>
 				</div>
 			</div>
+			<div class="jumbotron" id="status"></div>
 		</div>
 	</body>
 </html>

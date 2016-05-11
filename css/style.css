@@ -1,5 +1,7 @@
-
+body {
+	background-color: #b3d9ff;
+}
 .jumbotron {
-	background-color: #32c8ff;
+	background-color: #99ccff;
 	color:#ffffff;
 }

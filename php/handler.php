@@ -2,13 +2,14 @@
 require_once("inc/user.php.inc");
 require_once("inc/file.php.inc");
 
-$request = $_POST['request'];
+$request = $_POST[''];
 $response = "<h1>didn't work :^)";
 
 switch($request)
 {
 	case "register":
-		$username = $_POST['reg_username'];
+		$json = json_decode(file_get_contents("php://input"));
+		$username = $json['reg_username'];
 		$password = $_POST['reg_password'];
 		$first_name = $_POST['reg_first_name'];
 		$last_name = $_POST['reg_last_name'];
@@ -26,6 +27,7 @@ switch($request)
 		}
 		break;
 	case "login":
+		$json = json_decode(file_get_contents("php://input"));
 		$username = $_POST['log_username'];
 		$password = $_POST['log_password'];
 		$login = new user("inc/connect.ini");
@@ -42,19 +44,18 @@ switch($request)
 		}
 		break;
 	case "logout":
-		// remove all session variables
 		session_unset();
-		// destroy the session
 		session_destroy();
-		
 		header( 'refresh:3; Location: http://127.0.0.1/index.html' ) ;
 		break;
 	case "upload":
+		$json = json_decode(file_get_contents("php://input"));
 		$file = new file("inc/connect.ini");
 		$response = $file->file_upload();
 		if ($response['success'])
 		{
 			$response = "<p>File Upload Successful!";
+			header( 'refresh:3; Location: http://127.0.0.1/user.html' ) ;
 		}
 		else
 		{
@@ -62,6 +63,7 @@ switch($request)
 		}
 		break;
 	case "browse":
+		$json = json_decode(file_get_contents("php://input"));
 		$file = new file("inc/connect.ini");
 		$response = $file->file_browse();
 		break;

@@ -31,12 +31,13 @@ class file
 		$host_url = "http://127.0.0.1/";
 		$root = "uploads/";
 		$dir = $_SESSION['user_name'];
-		if (!file_exists($root.$dir."/".$new_file_name)) {
+		if (!file_exists($root.$dir."/".$new_file_name))
+		{
 			mkdir($root.$dir.'/'.$new_file_name, 0777, true);
 		}
 		$file_url = $host_url.$root.$dir.$new_file_name;
 		$now = date("m-d-y", time());		
-		$query   = "
+		$query = "
 			insert into files
 			(
 				file_name,
