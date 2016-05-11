@@ -10,10 +10,10 @@ switch($request)
 	case "register":
 		$json = json_decode(file_get_contents("php://input"));
 		$username = $json['reg_username'];
-		$password = $_POST['reg_password'];
-		$first_name = $_POST['reg_first_name'];
-		$last_name = $_POST['reg_last_name'];
-		$email = $_POST['reg_email'];
+		$password = $json['reg_password'];
+		$first_name = $json['reg_first_name'];
+		$last_name = $json['reg_last_name'];
+		$email = $json['reg_email'];
 		$login = new user("inc/connect.ini");
 		$response = $login->login_user($username, $password);
 		if (!$response['success'])
@@ -28,8 +28,8 @@ switch($request)
 		break;
 	case "login":
 		$json = json_decode(file_get_contents("php://input"));
-		$username = $_POST['log_username'];
-		$password = $_POST['log_password'];
+		$username = $json['log_username'];
+		$password = $json['log_password'];
 		$login = new user("inc/connect.ini");
 		$response = $login->login_user($username, $password);
 		if ($response['success'])
