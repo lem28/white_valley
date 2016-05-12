@@ -30,9 +30,9 @@ class user
 	{
 		return $this->db->real_escape_string(sha1($password.$this->salt));
 	}
-	public function get_user_login($user_login)
+	public function get_user_login($login)
 	{
-		$query = "select user_login from users where user_login='$user_login';";
+		$query = "select user_login from users where user_login='$login';";
 		$result = $this->db->query($query);
 		$user = $result->fetch_assoc();
 		if (isset($user['user_login']))
@@ -41,16 +41,16 @@ class user
 		}
 		return 0;
 	}
-	public function login_user($user_login, $password)
+	public function login_user($login, $password)
 	{
-		if ($this->get_user_login($user_login) != 0)
+		if ($this->get_user_login($login) != 0)
 		{
 			return array(
 				"success" => false,
 				"message" => "user does not exist"
 			);
 		}
-		$query = "select * from users where user_login = '$user_login';";
+		$query = "select * from users where user_login = '$login';";
 		$result = $this->db->query($query);
 		if (!$result)
 		{
@@ -61,7 +61,7 @@ class user
 		}
 		$salt_pw = $this->salt_password($password);
 		$user = $result->fetch_assoc();
-		if (isset($user['user_pw']) && $user['user_pw'] == $salt_pw)
+		if ($user['user_pw'] == $salt_pw)
 		{
 			return array("success" => true);
 		}
@@ -70,19 +70,19 @@ class user
 			"message" => "failed to match password"
 		);
 	}
-	public function add_new_user($user_login, $password, $first_name, $last_name, $email)
+	public function add_new_user($login, $password, $first_name, $last_name, $email)
 	{
-		if ($this->get_user_login($user_login) != 0)
+		if ($this->get_user_login($login) != 0)
 		{
-			$this->logger->log("user $user_login already exists!");
+			$this->logger->log("user $login already exists!");
 			$response = array(
-				"message" => "user $user_login already exists!",
+				"message" => "user $login already exists!",
 				"success" => false
 			);
 			return $response;
 		}
 		$now = date("Y-m-d h:i:s", time());
-		$user_login = $this->db->real_escape_string($user_login);
+		$login = $this->db->real_escape_string($login);
 		$password = $this->salt_password($password);
 		$query = "
 			insert into users
@@ -97,7 +97,7 @@ class user
 			)
 			values
 			(
-				'$user_login',
+				'$login',
 				'$password',
 				'$first_name',
 				'$last_name',

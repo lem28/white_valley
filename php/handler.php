@@ -14,7 +14,7 @@ function register()
 	$email = $json['reg_email'];
 	$login = new user("inc/connect.ini");
 	$response = $login->login_user($username, $password);
-	if (!$response['success'])
+	if ($response['success'])
 	{
 		$login->add_new_user($username,$password,$first_name,$last_name,$email);
 		$response = "<p> $username Registered Successfully!";
@@ -34,7 +34,7 @@ function login()
 	$password = $json['log_password'];
 	$login = new user("inc/connect.ini");
 	$response = $login->login_user($username, $password);
-	if (!$response['success'])
+	if ($response['success'])
 	{
 		$response = "<p>Login Successful!";
 		echo $response;
@@ -89,5 +89,4 @@ if($r == "upload")
 	upload();
 if($r == "browse")
 	browse();
-
 ?>
